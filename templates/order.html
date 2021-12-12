@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <form action="#" method="post">  
+        <p>Choose flowers </p>   
+        <select name="product" id="cars">
+            <option value="roses">Roses</option>
+            <option value="lilies">Lilies</option>
+            <option value="tulips">Tulips</option>
+        </select>  
+        <p>Adress</p>   
+        <input type = "text" name="adress" required>
+        <p>Phone number</p>   
+        <input type = "text" name="phone_number" required>
+        <p><button type="submit">Order</button></p>   
+    </form>     
+{% endblock %}
